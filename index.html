@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BEYONDWORLD COSMETICS | Official Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans",
+        "Segoe UI", sans-serif;
+      color-scheme: light;
+      --primary: #ff7c8a;
+      --primary-soft: #ffe6ea;
+      --accent: #7ac4ff;
+      --bg: #fff7fb;
+      --text-main: #222;
+      --text-sub: #666;
+      --radius-lg: 24px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #fff0f3, #f3f8ff);
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff7c8a, #ffb27e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      position: relative;
+      padding: 4px 0;
+      color: #444;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 124, 138, 0.5);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-cta span {
+      font-size: 1rem;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 124, 138, 0.25);
+      font-size: 0.78rem;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff7c8a, #ffb27e);
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ff7c8a, #ffb27e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 22px;
+      color: var(--text-sub);
+      font-size: 0.98rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      font-size: 0.77rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #f1e1ff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-badge-emoji {
+      font-size: 0.9rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #ff7c8a, #ffb27e);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 24px rgba(255, 124, 138, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.06s ease-out, box-shadow 0.06s ease-out,
+        opacity 0.12s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.96;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(255, 124, 138, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 6px 14px rgba(255, 124, 138, 0.35);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 14px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    .hero-visual {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #ffe5ec, #e7f4ff);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual-main {
+      border-radius: 18px;
+      background: #ffffffcc;
+      padding: 18px 16px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .hero-product-text {
+      font-size: 0.9rem;
+    }
+
+    .hero-product-name {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .hero-product-tagline {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+
+    .hero-product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .hero-product-tag {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #fff7fb;
+      border: 1px solid #ffd6ef;
+    }
+
+    .hero-product-badge {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .hero-product-mock {
+      justify-self: center;
+      width: 100px;
+      height: 150px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #ffe0ec, #ffffff);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 25px rgba(255, 124, 138, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-product-mock::before {
+      content: "VERSUS\nHYALURONIC\nSERUM";
+      white-space: pre;
+      position: absolute;
+      left: 14px;
+      top: 32px;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .hero-product-mock::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: -10px;
+      width: 60px;
+      height: 140px;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.9),
+        transparent
+      );
+      opacity: 0.9;
+      transform: rotate(-18deg);
+    }
+
+    .hero-bubble {
+      position: absolute;
+      right: 14px;
+      bottom: 20px;
+      font-size: 0.74rem;
+      padding: 8px 10px;
+      border-radius: 14px;
+      background: #ffffffdd;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-bubble strong {
+      color: var(--primary);
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 32px 0 40px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .section-subtitle {
+      margin: 4px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .section-caption {
+      font-size: 0.8rem;
+      color: #999;
+    }
+
+    /* PRODUCTS */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 14px 13px 15px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-label {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #fff8f0;
+      color: #ff7c3d;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .product-desc {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #f4f7ff;
+      color: #5670b5;
+    }
+
+    .product-meta {
+      font-size: 0.74rem;
+      color: #999;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-mock {
+      align-self: flex-end;
+      width: 50px;
+      height: 90px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fbe9ff, #ffffff);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    /* SKIN SOLUTIONS */
+    .solutions-wrap {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .solution-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .solution-tag {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid #f0e4ff;
+      background: #faf8ff;
+      cursor: default;
+    }
+
+    .solution-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+    }
+
+    .solution-list {
+      padding-left: 16px;
+      margin: 0;
+    }
+
+    .solution-list li {
+      margin-bottom: 4px;
+    }
+
+    .solution-note {
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    /* R&D */
+    .rd-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .rd-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 16px;
+      padding: 12px 12px 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.82rem;
+    }
+
+    .rd-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .rd-badge {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #e7f4ff;
+      color: #0d73bd;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    /* NEWS */
+    .news-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 0.8rem;
+    }
+
+    .news-item {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 14px;
+      padding: 10px 11px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+    }
+
+    .news-badge {
+      font-size: 0.7rem;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: #f0f9ff;
+      color: #0b7ac3;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .news-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .news-meta {
+      font-size: 0.7rem;
+      color: #999;
+    }
+
+    .partners-row {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #777;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .partner-pill {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px dashed #e0e0e0;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 16px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+    }
+
+    .contact-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .contact-grid-info {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .contact-grid-info p {
+      margin: 4px 0;
+    }
+
+    .contact-grid-info strong {
+      color: var(--text-main);
+    }
+
+    form {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      font: inherit;
+      padding: 7px 9px;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      outline: none;
+      font-size: 0.85rem;
+      background: #ffffff;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #ffb27e;
+      box-shadow: 0 0 0 2px rgba(255, 178, 126, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .btn-submit {
+      margin-top: 4px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 16px 0 22px;
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 60px;
+      }
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .rd-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .news-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .solution-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .rd-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-mark">BW</div>
+        <div>
+          <div style="font-size:0.9rem;">BEYONDWORLD</div>
+          <div style="font-size:0.7rem;color:#777;">COSMETICS</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#brand">Brand</a>
+        <a href="#products">Products</a>
+        <a href="#solutions">Skin Solutions</a>
+        <a href="#rd">R&amp;D</a>
+        <a href="#news">News &amp; Exhibitions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">
+        B2B Inquiry <span>→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="brand">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-eyebrow">
+              <span class="eyebrow-dot"></span>
+              BEYONDWORLD · PROFESSIONAL COSMECEUTICALS
+            </div>
+            <h1 class="hero-title">
+              Professional skin solutions<br />
+              from clinic to<br />
+              <span>everyday skincare.</span>
+            </h1>
+            <p class="hero-subtitle">
+              BEYONDWORLD brings together years of global medical aesthetic
+              experience<br />
+              to create a <b>cosmetic line inspired by fillers and skin boosters</b>.<br />
+              Low irritation, high-performance formulas designed to reach deeper.
+            </p>
+
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <span class="hero-badge-emoji">🧪</span> Dermatologist-inspired
+                testing (in-house standard)
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-emoji">🌱</span> Low irritation formulas
+                for sensitive skin
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-emoji">🌍</span> Tailor-made for global
+                export &amp; branding
+              </div>
+            </div>
+
+            <div class="hero-cta-row">
+              <button class="btn-primary" onclick="scrollToSection('products')">
+                View key products
+                <span>↓</span>
+              </button>
+              <button class="btn-ghost" onclick="scrollToSection('contact')">
+                Distribution · OEM/ODM Inquiry
+              </button>
+            </div>
+
+            <p class="hero-note">
+              * All product names, claims and descriptions are placeholders.
+              Please align with your official BEYONDWORLD cosmetic portfolio.
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-visual-main">
+              <div class="hero-product-text">
+                <div class="hero-product-name">VERSUS HYALURONIC SERUM</div>
+                <div class="hero-product-tagline">
+                  A high-content hyaluronic acid serum inspired by filler
+                  science. Deep hydration with a weightless, non-sticky finish.
+                </div>
+                <div class="hero-product-tags">
+                  <div class="hero-product-tag">Low &amp; high molecular HA</div>
+                  <div class="hero-product-tag">Peptide complex</div>
+                  <div class="hero-product-tag">Fragrance &amp; alcohol free</div>
+                </div>
+                <div class="hero-product-badge">
+                  AM/PM use · Apply after toner · For all skin types
+                </div>
+              </div>
+              <div class="hero-product-mock"></div>
+            </div>
+            <div class="hero-bubble">
+              Localized packaging and<br />
+              <strong>regulatory-ready artwork</strong><br />
+              for global partners
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Key Cosmetic Line-up</h2>
+            <p class="section-subtitle">
+              Skincare built on BEYONDWORLD’s medical aesthetic background.
+            </p>
+          </div>
+          <div class="section-caption">
+            * Please replace with your official product line, INCI and claims.
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- 1 -->
+          <article class="product-card">
+            <div class="product-label">Hydration · Glow</div>
+            <div class="product-name">VERSUS Hydra Glow Serum</div>
+            <div class="product-desc">
+              A multi-weight hyaluronic complex and vitamin blend that
+              visibly plumps and hydrates for a healthy glow – without tackiness.
+            </div>
+            <div class="product-tags">
+              <span class="product-tag">5x Hyaluronic Complex</span>
+              <span class="product-tag">Pro-vitamin B5 &amp; Niacinamide</span>
+              <span class="product-tag">Alcohol-free</span>
+            </div>
+            <div class="product-meta">
+              <span>All skin types · AM/PM use</span>
+              <div class="product-mock"></div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="product-card">
+            <div class="product-label">Firming · Contouring</div>
+            <div class="product-name">VERSUS Firming Ampoule</div>
+            <div class="product-desc">
+              A concentrated lifting ampoule with peptides and collagen boosters,
+              designed for visible firmness and improved facial contours.
+            </div>
+            <div class="product-tags">
+              <span class="product-tag">Lifting peptides</span>
+              <span class="product-tag">Collagen-boosting complex</span>
+              <span class="product-tag">
+                Anti-wrinkle claim* (*subject to local regulations)
+              </span>
+            </div>
+            <div class="product-meta">
+              <span>Mature skin · Night care focus</span>
+              <div class="product-mock"></div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-card">
+            <div class="product-label">Gentle Cleansing</div>
+            <div class="product-name">VERSUS Soft Balance Cleanser</div>
+            <div class="product-desc">
+              A mild, low pH cleanser that effectively removes impurities and
+              makeup while supporting the skin’s natural barrier.
+            </div>
+            <div class="product-tags">
+              <span class="product-tag">Approx. pH 5.5</span>
+              <span class="product-tag">EWG green-level focused formula</span>
+              <span class="product-tag">For sensitive skin</span>
+            </div>
+            <div class="product-meta">
+              <span>Daily cleansing · All skin types</span>
+              <div class="product-mock"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKIN SOLUTIONS -->
+    <section id="solutions">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Skin Solution Mapping</h2>
+            <p class="section-subtitle">
+              A simple category guide for distributors and clinic partners.
+            </p>
+          </div>
+        </div>
+
+        <div class="solutions-wrap">
+          <div class="solution-tags">
+            <div class="solution-tag">💧 Hydration &amp; Barrier Care</div>
+            <div class="solution-tag">✨ Brightening</div>
+            <div class="solution-tag">💪 Firming &amp; Lifting</div>
+            <div class="solution-tag">🌿 Sensitive &amp; Soothing</div>
+            <div class="solution-tag">🌞 Urban Stress &amp; UV</div>
+          </div>
+          <div class="solution-layout">
+            <div>
+              <strong>Suggested routine (AM)</strong>
+              <ul class="solution-list">
+                <li>STEP 1. Soft Balance Cleanser — gentle, low-irritation cleanse</li>
+                <li>STEP 2. Toner — rebalance skin pH</li>
+                <li>STEP 3. Hydra Glow Serum — intensive hydration &amp; radiance</li>
+                <li>STEP 4. Sunscreen — UV and environmental protection</li>
+              </ul>
+              <strong>Suggested routine (PM)</strong>
+              <ul class="solution-list">
+                <li>STEP 1. First cleanse (oil/water) + Soft Balance Cleanser</li>
+                <li>STEP 2. Toner or essence pad</li>
+                <li>STEP 3. Firming Ampoule — targeted lifting &amp; firming care</li>
+                <li>STEP 4. Cream or sleeping mask</li>
+              </ul>
+            </div>
+            <div>
+              <strong>By skin type</strong>
+              <ul class="solution-list">
+                <li>
+                  <b>Dry / Dehydrated</b> — hydrating serum + cream, consider
+                  blending with facial oils.
+                </li>
+                <li>
+                  <b>Oily / Blemish-prone</b> — low pH cleanser + lightweight serum,
+                  non-comedogenic formulas emphasized.
+                </li>
+                <li>
+                  <b>Sensitive</b> — fragrance / alcohol / colorant minimized,
+                  soothing actives (Cica, Panthenol, etc.) highlighted.
+                </li>
+                <li>
+                  <b>Professional Use</b> — pre/post-procedure soothing &amp;
+                  barrier-support lines for clinics and spas.
+                </li>
+              </ul>
+              <div class="solution-note">
+                * This area is ideal for mapping your actual BEYONDWORLD cosmetic
+                portfolio into <u>skin-concern-based recommendations</u> for B2B partners.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- R&D -->
+    <section id="rd">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">R&amp;D · Quality &amp; Regulatory</h2>
+            <p class="section-subtitle">
+              Applying the same rigor from our medical device export experience
+              to our cosmetic development.
+            </p>
+          </div>
+        </div>
+
+        <div class="rd-grid">
+          <article class="rd-card">
+            <div class="rd-badge">FORMULATION</div>
+            <div class="rd-title">From filler &amp; booster science</div>
+            High-content hyaluronic acid, peptides, PDRN and other key actives
+            are reformulated into cosmetic-friendly textures and concentrations,
+            inspired by medical aesthetic treatments.
+          </article>
+          <article class="rd-card">
+            <div class="rd-badge">SAFETY</div>
+            <div class="rd-title">Skin tolerance &amp; performance</div>
+            In-house irritation checks and usability evaluations are designed
+            to meet the expectations of clinics, distributors and regulators
+            in each target market.
+          </article>
+          <article class="rd-card">
+            <div class="rd-badge">REGULATORY</div>
+            <div class="rd-title">Support for global registration</div>
+            Ingredient lists, labelling and claims are prepared with EU,
+            Middle East, Russia/CIS and other regions in mind, with optional
+            collaboration through local regulatory partners.
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS & EXHIBITIONS -->
+    <section id="news">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">News &amp; Exhibitions</h2>
+            <p class="section-subtitle">
+              Where to meet BEYONDWORLD cosmetics and our team around the world.
+            </p>
+          </div>
+          <div class="section-caption">
+            Replace with confirmed exhibitions, booth numbers and onsite events.
+          </div>
+        </div>
+
+        <div class="news-list">
+          <article class="news-item">
+            <div class="news-badge">Exhibition · Middle East</div>
+            <div class="news-title">
+              Beautyworld Middle East 2025 (Cosmetic Line Introduction)
+            </div>
+            <div class="news-meta">
+              Oct 27–29, 2025 · Dubai World Trade Centre · Hall 2 – Booth XX
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-badge">Exhibition · Europe</div>
+            <div class="news-title">
+              Cosmoprof Worldwide Bologna — Preview of BEYONDWORLD Cosmetics
+            </div>
+            <div class="news-meta">
+              2026 (TBC) · Bologna, Italy · More details to be announced
+            </div>
+          </article>
+        </div>
+
+        <div class="partners-row">
+          Key target partners:
+          <span class="partner-pill">Dermatology &amp; aesthetic clinics</span>
+          <span class="partner-pill">Plastic surgery centers</span>
+          <span class="partner-pill">Premium spas &amp; salons</span>
+          <span class="partner-pill">Online &amp; offline beauty retailers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">B2B · OEM/ODM Contact</h2>
+            <p class="section-subtitle">
+              We are looking for long-term partners to grow BEYONDWORLD
+              cosmetics globally.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Send us an inquiry</h3>
+            <p style="font-size:0.82rem;color:var(--text-sub);margin-top:0;">
+              Please fill out the form below. Our team will review and get back
+              to you. Including details on market, channel and volume helps us
+              respond more efficiently.
+            </p>
+
+            <form onsubmit="handleFakeSubmit(event)">
+              <div>
+                <label for="contact-name">Name / Company</label>
+                <input id="contact-name" placeholder="e.g. Dan Kim / BEYONDWORLD" />
+              </div>
+              <div>
+                <label for="contact-email">E-mail</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label for="contact-country">Country / Region</label>
+                <input id="contact-country" placeholder="e.g. Korea, UAE, EU" />
+              </div>
+              <div>
+                <label for="contact-type">Interest</label>
+                <select id="contact-type">
+                  <option>Cosmetic distribution</option>
+                  <option>Pre/post-procedure care line</option>
+                  <option>Private label OEM/ODM</option>
+                  <option>Co-development / co-brand</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  placeholder="Please share target market, channels, volume, timeline, and any specific products of interest."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-submit">
+                Send inquiry (Demo)
+              </button>
+              <p
+                id="contact-message-info"
+                style="font-size:0.75rem;color:#999;margin:6px 0 0;"
+              >
+                * This is a demo page. Actual mail sending will require server
+                integration.
+              </p>
+            </form>
+          </div>
+          <div class="contact-grid-info">
+            <p><strong>BEYONDWORLD COSMETICS</strong></p>
+            <p>HQ Address: (Sample) Yongin-si, Gyeonggi-do, Republic of Korea</p>
+            <p>E-mail: info@beyondworld.co.kr</p>
+            <p>Business: Dermal Filler · Skin Booster · Professional Cosmetics</p>
+            <p style="margin-top:10px;">
+              We support:
+              <br />· Label &amp; packaging localization for each market<br />·
+              Marketing &amp; exhibition materials (brochures, sample kits)<br />·
+              Training resources for clinics and distributors
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© BEYONDWORLD COSMETICS. All rights reserved.</div>
+        <div class="footer-links">
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+          <span>Contact: info@beyondworld.co.kr</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 64,
+        behavior: "smooth",
+      });
+    }
+
+    function handleFakeSubmit(e) {
+      e.preventDefault();
+      const info = document.getElementById("contact-message-info");
+      info.textContent =
+        "Demo only. Connect this form to your backend or email service for real inquiries.";
+      info.style.color = "#ff7c8a";
+    }
+  </script>
+</body>
+</html>
